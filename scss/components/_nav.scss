@@ -1,11 +1,58 @@
-.nav {
+.menu {
+	@extend %listreset;
+	position: absolute;
+	top: 100%;
+	right: 0;
+	left: 0;
+	transform: scale(0.9);
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity .3s ease, visibility .3s ease, transform .3s ease-in-out;
 
+	@include media('>=tablet') {
+		opacity: 1;
+		visibility: visible;
+		display: flex;
+		position: static;
+		transform: scale(1);
+	}
+
+	li {
+		a {
+			color: $white;
+			font-weight: bold;
+			text-decoration: none;
+			display: block;
+			padding: 10px;
+			background-color: $gray;
+			margin-bottom: 1px;
+			text-transform: uppercase;
+			transition: color .3s linear, border-color .35s linear;
+			@include media('>=tablet') {
+				padding: 7px 15px;
+				border: 2px solid transparent;
+				background-color: transparent;
+			}
+
+			&:hover {
+				background-color: $blue;
+				@include media('>=tablet') {
+					background-color: transparent;
+					border: 2px solid $blue;
+					color: $blue;
+				}
+			}
+		}
+
+		.active {
+			color: $white;
+			background-color: $blue;
+			@include media('>=tablet') {
+				background-color: transparent;
+				border: 2px solid $blue;
+				color: $blue;
+			}
+		}
+	}
 }
 
-.nav li {
-
-}
-
-.nav a {
-	
-}

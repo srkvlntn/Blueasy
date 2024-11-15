@@ -307,7 +307,7 @@ template {
   display: none;
 }
 
-.what_to_do ul {
+.menu {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -638,9 +638,65 @@ a:hover {
   width: 100%;
 }
 
-body {
-  color: black;
+.menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
+  transform: scale(0.9);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease-in-out;
 }
+@media (min-width: 768px) {
+  .menu {
+    opacity: 1;
+    visibility: visible;
+    display: flex;
+    position: static;
+    transform: scale(1);
+  }
+}
+.menu li a {
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+  background-color: #515f67;
+  margin-bottom: 1px;
+  text-transform: uppercase;
+  transition: color 0.3s linear, border-color 0.35s linear;
+}
+@media (min-width: 768px) {
+  .menu li a {
+    padding: 7px 15px;
+    border: 2px solid transparent;
+    background-color: transparent;
+  }
+}
+.menu li a:hover {
+  background-color: #4bcaff;
+}
+@media (min-width: 768px) {
+  .menu li a:hover {
+    background-color: transparent;
+    border: 2px solid #4bcaff;
+    color: #4bcaff;
+  }
+}
+.menu li .active {
+  color: #fff;
+  background-color: #4bcaff;
+}
+@media (min-width: 768px) {
+  .menu li .active {
+    background-color: transparent;
+    border: 2px solid #4bcaff;
+    color: #4bcaff;
+  }
+}
+
 .wrapper {
   overflow: hidden;
   position: relative;
@@ -652,104 +708,80 @@ body {
   padding: 0 15px;
 }
 
-.box {
-  background-color: #000;
-  padding: 0 10px 10px;
-}
-.box .warring {
-  color: olive;
-  text-align: center;
-  margin-bottom: 30px;
-}
-.box .warring h2 {
-  border-bottom: 2px solid #f00;
-  display: inline-block;
+.header {
   position: relative;
+  background-color: #353f46;
+  padding: 30px 0;
+  opacity: 0.85;
 }
-.box .warring h2::before {
-  content: "";
-  height: 2px;
-  width: 200px;
-  background-color: #f00;
-  position: absolute;
-  bottom: -10px;
+@media (min-width: 768px) {
+  .header {
+    padding: 55px 0;
+  }
 }
-.box .logo-before {
-  height: 100px;
-  width: 100%;
-  color: #fff;
+@media (min-width: 768px) {
+  .header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 1;
+  }
+}
+
+.header-holder {
   display: flex;
   justify-content: space-between;
-  text-transform: uppercase;
+  align-items: center;
 }
-.box .logo-before img {
-  width: 100px;
+.header-holder .menu-opener {
+  display: inline-block;
+  vertical-align: top;
+  width: 40px;
+  height: 40px;
+  background: #4bcaff;
+  position: relative;
+  border-radius: 3px;
 }
-.box .logo-before a {
-  text-decoration: none;
-  color: darkolivegreen;
-  transition: color 0.2s linear;
+@media (min-width: 768px) {
+  .header-holder .menu-opener {
+    display: none;
+  }
 }
-.box .logo-before a:hover {
-  color: rgb(113.1493506494, 142.4350649351, 62.5649350649);
+.header-holder .menu-opener span, .header-holder .menu-opener::before, .header-holder .menu-opener::after {
+  background: #fff;
+  border-radius: 4px;
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  right: 25%;
+  height: 3px;
+  margin-top: -2px;
+  transition: all 0.3s ease-in-out;
 }
-
-.before_start {
-  padding: 0 5px;
+.header-holder .menu-opener::before, .header-holder .menu-opener::after {
+  content: "";
+  top: 30%;
 }
-.before_start .row .img {
-  height: 70px;
-  background-color: olive;
-  margin-bottom: 20px;
-}
-
-.file_watcher {
-  max-width: 100%;
-  margin-bottom: 30px;
-}
-.file_watcher h2 {
-  background-color: antiquewhite;
-  margin: 0 -5px 20px;
-  padding: 5px 10px;
-}
-.file_watcher h4 {
-  border-bottom: 1px solid olive;
-  margin-bottom: 15px;
-  padding-bottom: 3px;
-}
-.file_watcher p {
-  word-break: break-all;
-}
-.file_watcher .small {
-  padding: 40px 0 0 0;
-  font-size: 13px;
-}
-.file_watcher .small span {
-  color: olive;
-  text-transform: uppercase;
+.header-holder .menu-opener::after {
+  top: 70%;
 }
 
-.what_to_do {
-  padding-bottom: 20px;
+.mobile-menu-active .menu-opener span {
+  opacity: 0;
 }
-.what_to_do h4 {
-  background-color: antiquewhite;
-  margin: 0 -5px 20px;
-  padding: 5px 10px;
+.mobile-menu-active .menu-opener::before, .mobile-menu-active .menu-opener::after {
+  transform: rotate(45deg);
+  top: 50%;
+  left: 15%;
+  right: 15%;
 }
-.what_to_do ul li {
-  margin-bottom: 10px;
+.mobile-menu-active .menu-opener::after {
+  transform: rotate(-45deg);
 }
-.what_to_do ul li::before {
-  content: "-";
-  margin-right: 10px;
-}
-.what_to_do li ul {
-  margin: 0;
-  padding-left: 10px;
-}
-.what_to_do li ul li {
-  margin-bottom: 2px;
+.mobile-menu-active .menu {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
 }
 
 @font-face {
