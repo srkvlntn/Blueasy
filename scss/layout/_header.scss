@@ -1,8 +1,9 @@
 .header {
-	position: relative;
-	background-color: $dark-gray;
+	position: absolute;
+	width: 100%;
+	background-color: rgba($dark-gray, 0.75);
 	padding: 30px 0;
-	opacity: 0.85;
+
 
 	@include media('>=tablet') {
 		padding: 55px 0;
@@ -13,7 +14,6 @@
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
-			opacity: 1;
 		}
 	}
 }
@@ -31,6 +31,7 @@
 		background: $blue;
 		position: relative;
 		border-radius: 3px;
+		transition: background .3s ease-in-out;
 
 		@include media('>=tablet') {
 			display: none;
@@ -39,7 +40,7 @@
 		span,
 		&::before,
 		&::after {
-			background: $white;
+			background-color: $white;
 			border-radius: 4px;
 			position: absolute;
 			top: 50%;
@@ -58,6 +59,10 @@
 
 		&::after {
 			top: 70%;
+		}
+
+		&:hover {
+			background-color: darken($blue, 10%);
 		}
 	}
 }
@@ -83,6 +88,6 @@
 	.menu {
 		opacity: 1;
 		visibility: visible;
-		transform: scale(1);
+		top: 100%;
 	}
 }

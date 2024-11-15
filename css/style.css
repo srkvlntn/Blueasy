@@ -640,21 +640,22 @@ a:hover {
 
 .menu {
   position: absolute;
-  top: 100%;
+  top: 20%;
   right: 0;
   left: 0;
-  transform: scale(0.9);
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease-in-out;
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease-in-out, top 0.3s ease;
+  background-color: #353f46;
 }
 @media (min-width: 768px) {
   .menu {
     opacity: 1;
+    top: 100%;
     visibility: visible;
     display: flex;
     position: static;
-    transform: scale(1);
+    background-color: transparent;
   }
 }
 .menu li a {
@@ -666,11 +667,11 @@ a:hover {
   background-color: #515f67;
   margin-bottom: 1px;
   text-transform: uppercase;
-  transition: color 0.3s linear, border-color 0.35s linear;
+  transition: color 0.3s linear, border-color 0.35s linear, background-color 0.3s ease-in-out;
 }
 @media (min-width: 768px) {
   .menu li a {
-    padding: 7px 15px;
+    padding: 10px 15px 8px;
     border: 2px solid transparent;
     background-color: transparent;
   }
@@ -708,11 +709,55 @@ a:hover {
   padding: 0 15px;
 }
 
+.intro {
+  padding-top: 70px;
+}
+@media (min-width: 768px) {
+  .intro {
+    padding-top: 130px;
+  }
+}
+.intro .intro-box {
+  padding: 150px 0;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .intro .intro-box {
+    padding: 250px 0;
+  }
+}
+.intro .intro-box .intro-text {
+  font-size: 28px;
+}
+@media (min-width: 768px) {
+  .intro .intro-box .intro-text {
+    font-size: 33px;
+  }
+}
+@media (min-width: 1024px) {
+  .intro .intro-box .intro-text {
+    font-size: 42px;
+  }
+}
+.intro .intro-box .intro-text span {
+  line-height: 1.75;
+  color: #fff;
+  font-weight: lighter;
+  background-color: rgba(53, 63, 70, 0.75);
+  padding: 5px;
+  box-decoration-break: clone;
+}
+@media (min-width: 768px) {
+  .intro .intro-box .intro-text span {
+    padding: 4px 15px;
+  }
+}
+
 .header {
-  position: relative;
-  background-color: #353f46;
+  position: absolute;
+  width: 100%;
+  background-color: rgba(53, 63, 70, 0.75);
   padding: 30px 0;
-  opacity: 0.85;
 }
 @media (min-width: 768px) {
   .header {
@@ -724,7 +769,6 @@ a:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    opacity: 1;
   }
 }
 
@@ -741,6 +785,7 @@ a:hover {
   background: #4bcaff;
   position: relative;
   border-radius: 3px;
+  transition: background 0.3s ease-in-out;
 }
 @media (min-width: 768px) {
   .header-holder .menu-opener {
@@ -748,7 +793,7 @@ a:hover {
   }
 }
 .header-holder .menu-opener span, .header-holder .menu-opener::before, .header-holder .menu-opener::after {
-  background: #fff;
+  background-color: #fff;
   border-radius: 4px;
   position: absolute;
   top: 50%;
@@ -764,6 +809,9 @@ a:hover {
 }
 .header-holder .menu-opener::after {
   top: 70%;
+}
+.header-holder .menu-opener:hover {
+  background-color: rgb(24, 186.9833333333, 255);
 }
 
 .mobile-menu-active .menu-opener span {
@@ -781,7 +829,7 @@ a:hover {
 .mobile-menu-active .menu {
   opacity: 1;
   visibility: visible;
-  transform: scale(1);
+  top: 100%;
 }
 
 @font-face {

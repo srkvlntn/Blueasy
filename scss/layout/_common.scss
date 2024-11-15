@@ -19,3 +19,43 @@ body {
 }
 
 
+.intro {
+	padding-top: 70px;
+
+	@include media('>=tablet') {
+		padding-top: 130px;
+	}
+
+	.intro-box {
+		padding: 150px 0;
+		text-align: center;
+		@include media('>=tablet') {
+			padding: 250px 0;
+		}
+
+		.intro-text {
+			font-size: 28px;
+			@include media('>=tablet') {
+				font-size: 33px;
+			}
+
+			@include media('>=desktop') {
+				font-size: $h1-font-size;
+			}
+
+			span {
+				line-height: 1.75;
+				color: $white;
+				font-weight: lighter;
+				background-color: rgba($dark-gray, 0.75);
+				padding: 5px;
+				box-decoration-break: clone;
+
+				@include media('>=tablet') {
+					padding: 4px 15px;
+				}
+			}
+		}
+	}
+}
+
