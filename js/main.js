@@ -4,3 +4,4 @@ $(document).ready(function () {
         $('body').toggleClass('mobile-menu-active')
     })
 })
+
