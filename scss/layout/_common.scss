@@ -142,6 +142,7 @@ body {
 
 .section-video {
 	background-color: $gray;
+
 	p {
 		margin-bottom: 20px;
 		@include media('>=tablet') {
@@ -164,16 +165,68 @@ body {
 	background-color: $blue;
 
 	.twitter-box {
-		p{
+		p {
 			font-weight: lighter;
 			font-size: 24px;
 			@include media('>=tablet') {
 				font-size: 28px;
 			}
-			a{
+
+			a {
 				color: $white;
 				font-weight: bold;
 			}
 		}
+	}
+}
+
+.section-about {
+	p {
+		margin-bottom: 25px;
+		@include media('>=tablet') {
+			margin-bottom: 30px;
+		}
+		@include media('>=desktop') {
+			margin-bottom: 35px;
+		}
+	}
+
+	.about-icons {
+		display: flex;
+		justify-content: center;
+		margin: 0 -10px;
+
+		@include media('>=tablet') {
+			justify-content: start;
+		}
+
+
+		a {
+			border: 2px solid white;
+			height: 65px;
+			width: 65px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color: $white;
+			font-size: 30px;
+			margin: 0 10px;
+			transition: border .3s ease, color .3s ease;
+			//position: relative;
+
+			&:hover {
+				text-decoration: none;
+				color: $blue;
+				border: 2px solid $blue;
+			}
+
+			i {
+				//position: absolute;
+				//top: 50%;
+				//left: 50%;
+				//transform: translate(-50%, -50%);
+			}
+		}
+
 	}
 }
