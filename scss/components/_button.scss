@@ -4,10 +4,12 @@
 	transition: color .15s ease-in-out, border-color .15s ease-in-out, background-color .15s ease-in-out;
 	display: inline-block;
 	vertical-align: middle;
-	padding: 10px 20px;
+	padding: 10px 40px;
 	border-radius: 3px;
 	text-align: center;
 	border: none;
+	text-transform: uppercase;
+	font-weight: bold;
 
 	&:hover {
 		text-decoration: none;
@@ -28,13 +30,13 @@
 
 	&.btn-outline-primary {
 		background-color: transparent;
-		border: 2px solid $blue;
-		color: $blue;
+		border: 2px solid $dark-gray;
+		color: $dark-gray;
 
 		&:hover {
-			background-color: $dark-blue;
-			border-color: $dark-blue;
-			color: #fff;
+			background-color: $blue;
+			border-color: $white;
+			color: $white;
 		}
 	}
 
