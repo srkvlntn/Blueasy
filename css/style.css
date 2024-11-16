@@ -793,8 +793,15 @@ a:hover {
 
 .section-header {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+.section-header .section-title {
+  margin-bottom: 0;
+}
+.section-header i {
+  font-size: 30px;
 }
 
 .section-services {
@@ -859,10 +866,12 @@ a:hover {
 }
 .section-video .btn {
   display: block;
+  margin-bottom: 20px;
 }
 @media (min-width: 768px) {
   .section-video .btn {
     display: inline-block;
+    margin-bottom: 0;
   }
 }
 
@@ -915,7 +924,7 @@ a:hover {
   align-items: center;
   color: #fff;
   font-size: 30px;
-  margin: 0 10px;
+  margin: 0 5px;
   transition: border 0.3s ease, color 0.3s ease;
 }
 .section-about .about-icons a:hover {

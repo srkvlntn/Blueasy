@@ -93,8 +93,16 @@ body {
 
 .section-header {
 	display: flex;
-	align-items: center;
 	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 40px;
+
+	.section-title {
+		margin-bottom: 0;
+	}
+		i {
+			font-size: 30px;
+		}
 }
 
 .section-services {
@@ -155,8 +163,10 @@ body {
 
 	.btn {
 		display: block;
+		margin-bottom: 20px;
 		@include media('>=tablet') {
 			display: inline-block;
+			margin-bottom: 0;
 		}
 	}
 }
@@ -210,7 +220,7 @@ body {
 			align-items: center;
 			color: $white;
 			font-size: 30px;
-			margin: 0 10px;
+			margin: 0 5px;
 			transition: border .3s ease, color .3s ease;
 			//position: relative;
 
