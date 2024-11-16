@@ -14,16 +14,18 @@
 		@include media('>=desktop') {
 			padding: 80px 0;
 		}
+
 		.footer-menu {
 			@extend %listreset;
 			display: flex;
+
 			a {
 
 				color: $gray;
 				text-transform: uppercase;
 			}
 
-			li{
+			li {
 				&::after {
 					content: '|';
 					margin-left: 10px;
