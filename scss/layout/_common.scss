@@ -240,3 +240,23 @@ body {
 
 	}
 }
+
+.section-cite {
+	color: $gray;
+
+	p {
+		font-size: 22px;
+		font-weight: lighter;
+		@include media('>=tablet') {
+			font-size: 24px;
+			line-height: 1.79;
+		}
+		@include media('>=desktop') {
+			font-size: 28px;
+		}
+	}
+
+	a {
+		font-weight: bold;
+	}
+}

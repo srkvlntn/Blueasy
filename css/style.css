@@ -307,7 +307,7 @@ template {
   display: none;
 }
 
-.menu {
+.footer .footer-box .footer-menu, .menu {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -932,6 +932,28 @@ a:hover {
   color: #4bcaff;
   border: 2px solid #4bcaff;
 }
+.section-cite {
+  color: #515f67;
+}
+.section-cite p {
+  font-size: 22px;
+  font-weight: lighter;
+}
+@media (min-width: 768px) {
+  .section-cite p {
+    font-size: 24px;
+    line-height: 1.79;
+  }
+}
+@media (min-width: 1024px) {
+  .section-cite p {
+    font-size: 28px;
+  }
+}
+.section-cite a {
+  font-weight: bold;
+}
+
 .header {
   position: absolute;
   width: 100%;
@@ -1009,6 +1031,43 @@ a:hover {
   opacity: 1;
   visibility: visible;
   top: 100%;
+}
+
+.footer {
+  background-color: #353f46;
+  color: #515f67;
+}
+.footer .footer-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 0;
+  font-size: 12px;
+}
+@media (min-width: 768px) {
+  .footer .footer-box {
+    padding: 60px 0;
+  }
+}
+@media (min-width: 1024px) {
+  .footer .footer-box {
+    padding: 80px 0;
+  }
+}
+.footer .footer-box .footer-menu {
+  display: flex;
+}
+.footer .footer-box .footer-menu a {
+  color: #515f67;
+  text-transform: uppercase;
+}
+.footer .footer-box .footer-menu li::after {
+  content: "|";
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.footer .footer-box .footer-menu li:last-child::after {
+  display: none;
 }
 
 @font-face {

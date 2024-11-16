@@ -1,3 +1,41 @@
 .footer {
-	
+	background-color: $dark-gray;
+	color: $gray;
+
+	.footer-box {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 40px 0;
+		font-size: 12px;
+		@include media('>=tablet') {
+			padding: 60px 0;
+		}
+		@include media('>=desktop') {
+			padding: 80px 0;
+		}
+		.footer-menu {
+			@extend %listreset;
+			display: flex;
+			a {
+
+				color: $gray;
+				text-transform: uppercase;
+			}
+
+			li{
+				&::after {
+					content: '|';
+					margin-left: 10px;
+					margin-right: 10px;
+				}
+
+				&:last-child::after {
+					display: none;
+				}
+			}
+		}
+	}
+
+
 }
