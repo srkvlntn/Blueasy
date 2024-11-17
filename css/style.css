@@ -702,6 +702,71 @@ a:hover {
   }
 }
 
+.portfolio-card {
+  position: relative;
+  margin-bottom: 20px;
+}
+@media (min-width: 768px) {
+  .portfolio-card {
+    margin-bottom: 30px;
+  }
+  .portfolio-card:nth-last-child(-n+2) {
+    margin-bottom: 0;
+  }
+}
+@media (min-width: 1024px) {
+  .portfolio-card {
+    margin-bottom: 30px;
+  }
+  .portfolio-card:nth-last-child(-n+4) {
+    margin-bottom: 0;
+  }
+}
+.portfolio-card img {
+  display: block;
+  width: 100%;
+}
+.portfolio-card .hover-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100% - 30px);
+  height: 100%;
+  background-color: rgba(53, 63, 70, 0.8);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+.portfolio-card .hover-box:hover {
+  opacity: 1;
+}
+.portfolio-card .plus::before, .portfolio-card .plus::after {
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  content: "";
+  background-color: #fff;
+}
+.portfolio-card .plus::before {
+  width: 30px;
+  height: 2px;
+}
+@media (min-width: 768px) {
+  .portfolio-card .plus::before {
+    width: 20px;
+  }
+}
+.portfolio-card .plus::after {
+  width: 2px;
+  height: 30px;
+}
+@media (min-width: 768px) {
+  .portfolio-card .plus::after {
+    height: 20px;
+  }
+}
+
 .wrapper {
   overflow: hidden;
   position: relative;
@@ -852,6 +917,10 @@ a:hover {
 .section-video {
   background-color: #515f67;
 }
+.section-video .video {
+  display: block;
+  width: 100%;
+}
 .section-video p {
   margin-bottom: 20px;
 }
@@ -982,7 +1051,8 @@ a:hover {
   color: #fff;
 }
 .section-contact .form-item input:focus, .section-contact .form-item textarea:focus {
-  border-color: #fff;
+  outline: none;
+  box-shadow: 0 0 0 1px #fff;
 }
 .section-contact .form-item input,
 .section-contact .form-item textarea,

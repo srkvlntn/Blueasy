@@ -13,3 +13,74 @@
 .card-description {
 
 }
+
+
+.portfolio-card {
+	position: relative;
+	margin-bottom: 20px;
+	@include media('>=tablet') {
+		margin-bottom: 30px;
+		&:nth-last-child(-n+2) {
+			margin-bottom: 0;
+		}
+	}
+	@include media('>=desktop') {
+		margin-bottom: 30px;
+		&:nth-last-child(-n+4) {
+			margin-bottom: 0;
+		}
+	}
+
+	img {
+		display: block;
+		width: 100%;
+	}
+
+	.hover-box {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: calc(100% - 30px);
+		height: 100%;
+		background-color: rgba($dark-gray, 0.8);
+		opacity: 0;
+		transition: opacity .3s ease-in-out;
+
+
+		&:hover {
+			opacity: 1;
+		}
+	}
+
+	.plus {
+
+		&::before,
+		&::after {
+			top: 50%;
+			left: 50%;
+			position: absolute;
+			transform: translate(-50%, -50%);
+			content: '';
+			background-color: $white;
+		}
+
+		&::before {
+			width: 30px;
+			height: 2px;
+
+			@include media('>=tablet') {
+				width: 20px;
+			}
+		}
+
+		&::after {
+			width: 2px;
+			height: 30px;
+
+			@include media('>=tablet') {
+				height: 20px;
+			}
+		}
+	}
+}

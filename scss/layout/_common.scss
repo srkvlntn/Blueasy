@@ -149,8 +149,17 @@ body {
 	}
 }
 
+.section-portfolio {
+
+}
+
 .section-video {
 	background-color: $gray;
+
+	.video {
+		display: block;
+		width: 100%;
+	}
 
 	p {
 		margin-bottom: 20px;
@@ -296,7 +305,8 @@ body {
 			color: $white;
 
 			&:focus {
-				border-color: $white;
+				outline: none;
+				box-shadow: 0 0 0 1px $form-element-focus-border-color;
 			}
 		}
 
