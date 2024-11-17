@@ -163,11 +163,17 @@ body {
 	}
 
 	.btn {
-		display: block;
+		width: 100%;
 		margin-bottom: 20px;
 		@include media('>=tablet') {
-			display: inline-block;
+			width: auto;
 			margin-bottom: 0;
+		}
+	}
+
+	.btn-outline-primary {
+		&:hover {
+			border-color: $white;
 		}
 	}
 }
@@ -245,6 +251,12 @@ body {
 .section-cite {
 	color: $gray;
 
+	.section-title {
+		&::before {
+			background-color: $dark-gray;
+		}
+	}
+
 	p {
 		font-size: 22px;
 		font-weight: lighter;
@@ -259,5 +271,86 @@ body {
 
 	a {
 		font-weight: bold;
+	}
+}
+
+.section-contact {
+
+	button {
+		margin-bottom: 30px;
+		width: 100%;
+		padding: 20px 150px;
+		@include media('>=tablet') {
+			width: auto;
+		}
+	}
+
+	.form-item {
+		display: flex;
+		flex-direction: column;
+
+		input, textarea {
+			padding: 15px;
+			background-color: transparent;
+			border: 2px solid $white;
+			color: $white;
+
+			&:focus {
+				border-color: $white;
+			}
+		}
+
+		input,
+		textarea,
+		p {
+			margin-bottom: 20px;
+			@include media('>=tablet') {
+				margin-bottom: 25px;
+			}
+			@include media('>=desktop') {
+				margin-bottom: 30px;
+			}
+		}
+
+		address {
+			p {
+				font-style: normal;
+				margin-bottom: 0;
+			}
+		}
+
+		textarea {
+			resize: none;
+		}
+
+		label {
+			margin-bottom: 5px;
+			font-weight: bold;
+			@include media('>=tablet') {
+				margin-bottom: 10px;
+			}
+		}
+	}
+
+	.form-row {
+		align-items: center;
+
+		.contact-item-name {
+			order: 1;
+		}
+
+		.contact-item-message {
+			order: 2;
+			@include media('>=tablet') {
+				order: 3;
+			}
+		}
+
+		.contact-item-address {
+			order: 3;
+			@include media('>=tablet') {
+				order: 2;
+			}
+		}
 	}
 }

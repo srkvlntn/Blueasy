@@ -351,7 +351,7 @@ textarea.placeholder {
 
 input:focus,
 textarea:focus {
-  border-color: #4bcaff;
+  border-color: #fff;
 }
 
 select {
@@ -609,7 +609,6 @@ a:hover {
   display: inline-block;
   vertical-align: middle;
   padding: 10px 40px;
-  border-radius: 3px;
   text-align: center;
   border: none;
   text-transform: uppercase;
@@ -622,9 +621,11 @@ a:hover {
 .btn.btn-primary {
   background-color: #4bcaff;
   color: #fff;
+  border: 2px solid transparent;
 }
 .btn.btn-primary:hover {
-  background-color: #0069d9;
+  background-color: #353f46;
+  border-color: #fff;
 }
 .btn.btn-outline-primary {
   background-color: transparent;
@@ -865,14 +866,17 @@ a:hover {
   }
 }
 .section-video .btn {
-  display: block;
+  width: 100%;
   margin-bottom: 20px;
 }
 @media (min-width: 768px) {
   .section-video .btn {
-    display: inline-block;
+    width: auto;
     margin-bottom: 0;
   }
+}
+.section-video .btn-outline-primary:hover {
+  border-color: #fff;
 }
 
 .section-twitter {
@@ -935,6 +939,9 @@ a:hover {
 .section-cite {
   color: #515f67;
 }
+.section-cite .section-title::before {
+  background-color: #353f46;
+}
 .section-cite p {
   font-size: 22px;
   font-weight: lighter;
@@ -952,6 +959,87 @@ a:hover {
 }
 .section-cite a {
   font-weight: bold;
+}
+
+.section-contact button {
+  margin-bottom: 30px;
+  width: 100%;
+  padding: 20px 150px;
+}
+@media (min-width: 768px) {
+  .section-contact button {
+    width: auto;
+  }
+}
+.section-contact .form-item {
+  display: flex;
+  flex-direction: column;
+}
+.section-contact .form-item input, .section-contact .form-item textarea {
+  padding: 15px;
+  background-color: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+}
+.section-contact .form-item input:focus, .section-contact .form-item textarea:focus {
+  border-color: #fff;
+}
+.section-contact .form-item input,
+.section-contact .form-item textarea,
+.section-contact .form-item p {
+  margin-bottom: 20px;
+}
+@media (min-width: 768px) {
+  .section-contact .form-item input,
+  .section-contact .form-item textarea,
+  .section-contact .form-item p {
+    margin-bottom: 25px;
+  }
+}
+@media (min-width: 1024px) {
+  .section-contact .form-item input,
+  .section-contact .form-item textarea,
+  .section-contact .form-item p {
+    margin-bottom: 30px;
+  }
+}
+.section-contact .form-item address p {
+  font-style: normal;
+  margin-bottom: 0;
+}
+.section-contact .form-item textarea {
+  resize: none;
+}
+.section-contact .form-item label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+@media (min-width: 768px) {
+  .section-contact .form-item label {
+    margin-bottom: 10px;
+  }
+}
+.section-contact .form-row {
+  align-items: center;
+}
+.section-contact .form-row .contact-item-name {
+  order: 1;
+}
+.section-contact .form-row .contact-item-message {
+  order: 2;
+}
+@media (min-width: 768px) {
+  .section-contact .form-row .contact-item-message {
+    order: 3;
+  }
+}
+.section-contact .form-row .contact-item-address {
+  order: 3;
+}
+@media (min-width: 768px) {
+  .section-contact .form-row .contact-item-address {
+    order: 2;
+  }
 }
 
 .header {
