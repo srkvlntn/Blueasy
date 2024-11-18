@@ -104,6 +104,136 @@ body {
 	i {
 		font-size: 30px;
 	}
+
+
+	.menu-opener-section {
+		display: inline-block;
+		vertical-align: top;
+		width: 40px;
+		height: 40px;
+		background: $gray;
+		position: relative;
+		border-radius: 3px;
+		transition: background .3s ease-in-out;
+
+		@include media('>=tablet') {
+			display: none;
+		}
+
+		span,
+		&::before,
+		&::after {
+			background-color: $white;
+			border-radius: 4px;
+			position: absolute;
+			top: 50%;
+			left: 25%;
+			right: 25%;
+			height: 3px;
+			margin-top: -2px;
+			transition: all .3s ease-in-out;
+		}
+
+		&::before,
+		&::after {
+			content: '';
+			top: 30%;
+		}
+
+		&::after {
+			top: 70%;
+		}
+
+		&:hover {
+			background-color: darken($gray, 10%);
+		}
+	}
+}
+
+.mobile-menu-section-active {
+	.menu-opener-section {
+		span {
+			opacity: 0;
+		}
+		&::before,
+		&::after {
+			transform: rotate(45deg);
+			top: 50%;
+			left: 15%;
+			right: 15%;
+		}
+
+		&::after {
+			transform: rotate(-45deg);
+		}
+	}
+
+	.menu-section {
+		opacity: 1;
+		visibility: visible;
+		top: 100%;
+	}
+}
+
+.menu-section {
+	@extend %listreset;
+	position: absolute;
+	top: 70%;
+	right: 0;
+	left: 0;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity .3s ease, visibility .3s ease, transform .3s ease-in-out, top .2s ease-out;
+	background-color: $dark-gray;
+	z-index: 1;
+
+	@include media('>=tablet') {
+		opacity: 1;
+		top: 100%;
+		visibility: visible;
+		display: flex;
+		position: static;
+		background-color: transparent;
+	}
+
+	li {
+		a {
+			color: $white;
+			font-weight: bold;
+			text-decoration: none;
+			display: block;
+			padding: 10px;
+			background-color: $gray;
+			margin-bottom: 1px;
+			text-transform: uppercase;
+			transition: color .3s linear, border-color .35s linear, background-color .3s ease-in-out;
+			@include media('>=tablet') {
+				padding: 10px 15px 8px;
+				border: 2px solid transparent;
+				background-color: transparent;
+				color: $gray;
+			}
+
+			&:hover {
+				background-color: $blue;
+				@include media('>=tablet') {
+					background-color: transparent;
+					//border: 2px solid $blue;
+					color: $blue;
+				}
+			}
+		}
+
+		.active {
+			color: $white;
+			background-color: $blue;
+			@include media('>=tablet') {
+				background-color: transparent;
+				border: 2px solid $blue;
+				color: $blue;
+			}
+		}
+	}
 }
 
 .section-services {
@@ -136,6 +266,25 @@ body {
 }
 
 .section-portfolio {
+
+	.section-header-holder {
+		position: relative;
+
+		.container {
+			@include media('>=tablet') {
+				display: flex;
+				justify-content: space-between;
+				flex-direction: row;
+			}
+		}
+	}
+
+
+	.portfolio-wrapper {
+		position: relative;
+
+	}
+
 
 }
 

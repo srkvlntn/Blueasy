@@ -307,7 +307,7 @@ template {
   display: none;
 }
 
-.footer .footer-box .footer-menu, .menu {
+.footer .footer-box .footer-menu, .menu-section, .menu {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -686,7 +686,6 @@ a:hover {
 @media (min-width: 768px) {
   .menu li a:hover {
     background-color: transparent;
-    border: 2px solid #4bcaff;
     color: #4bcaff;
   }
 }
@@ -893,6 +892,121 @@ a:hover {
 .section-header i {
   font-size: 30px;
 }
+.section-header .menu-opener-section {
+  display: inline-block;
+  vertical-align: top;
+  width: 40px;
+  height: 40px;
+  background: #515f67;
+  position: relative;
+  border-radius: 3px;
+  transition: background 0.3s ease-in-out;
+}
+@media (min-width: 768px) {
+  .section-header .menu-opener-section {
+    display: none;
+  }
+}
+.section-header .menu-opener-section span, .section-header .menu-opener-section::before, .section-header .menu-opener-section::after {
+  background-color: #fff;
+  border-radius: 4px;
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  right: 25%;
+  height: 3px;
+  margin-top: -2px;
+  transition: all 0.3s ease-in-out;
+}
+.section-header .menu-opener-section::before, .section-header .menu-opener-section::after {
+  content: "";
+  top: 30%;
+}
+.section-header .menu-opener-section::after {
+  top: 70%;
+}
+.section-header .menu-opener-section:hover {
+  background-color: rgb(58.5489130435, 68.6684782609, 74.4510869565);
+}
+
+.mobile-menu-section-active .menu-opener-section span {
+  opacity: 0;
+}
+.mobile-menu-section-active .menu-opener-section::before, .mobile-menu-section-active .menu-opener-section::after {
+  transform: rotate(45deg);
+  top: 50%;
+  left: 15%;
+  right: 15%;
+}
+.mobile-menu-section-active .menu-opener-section::after {
+  transform: rotate(-45deg);
+}
+.mobile-menu-section-active .menu-section {
+  opacity: 1;
+  visibility: visible;
+  top: 100%;
+}
+
+.menu-section {
+  position: absolute;
+  top: 70%;
+  right: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease-in-out, top 0.2s ease-out;
+  background-color: #353f46;
+  z-index: 1;
+}
+@media (min-width: 768px) {
+  .menu-section {
+    opacity: 1;
+    top: 100%;
+    visibility: visible;
+    display: flex;
+    position: static;
+    background-color: transparent;
+  }
+}
+.menu-section li a {
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+  background-color: #515f67;
+  margin-bottom: 1px;
+  text-transform: uppercase;
+  transition: color 0.3s linear, border-color 0.35s linear, background-color 0.3s ease-in-out;
+}
+@media (min-width: 768px) {
+  .menu-section li a {
+    padding: 10px 15px 8px;
+    border: 2px solid transparent;
+    background-color: transparent;
+    color: #515f67;
+  }
+}
+.menu-section li a:hover {
+  background-color: #4bcaff;
+}
+@media (min-width: 768px) {
+  .menu-section li a:hover {
+    background-color: transparent;
+    color: #4bcaff;
+  }
+}
+.menu-section li .active {
+  color: #fff;
+  background-color: #4bcaff;
+}
+@media (min-width: 768px) {
+  .menu-section li .active {
+    background-color: transparent;
+    border: 2px solid #4bcaff;
+    color: #4bcaff;
+  }
+}
 
 .section-services {
   background-color: #4bcaff;
@@ -922,6 +1036,20 @@ a:hover {
 .section-portfolio .section-title::before,
 .section-cite .section-title::before {
   background-color: #353f46;
+}
+
+.section-portfolio .section-header-holder {
+  position: relative;
+}
+@media (min-width: 768px) {
+  .section-portfolio .section-header-holder .container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+}
+.section-portfolio .portfolio-wrapper {
+  position: relative;
 }
 
 .section-video {

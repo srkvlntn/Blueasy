@@ -5,3 +5,9 @@ $(document).ready(function () {
     })
 })
 
+$(document).ready(function () {
+    $('.menu-opener-section').on('click', function (a) {
+        a.preventDefault();
+        $('.section-header-holder').toggleClass('mobile-menu-section-active')
+    })
+})
