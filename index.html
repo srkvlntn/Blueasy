@@ -47,25 +47,25 @@
             <div class="container">
                 <h2 class="section-title">Services</h2>
                 <div class="services-box grid">
-                    <div class="col-12 col-md-6 col-lg-3 service-col">
+                    <div class="col-12 col-md-6 col-lg-3 service-card">
                         <img src="images/coffee.png" alt="service image">
                         <h3>Coffee</h3>
                         <p>Apple pie icing sweet. Brownie jelly-o applicake applicake sweet roll liquorice bear claw.
                             Jujubes carrot cake cotton candy sweet tart brownie. Tiramisu applicake jujubes.</p>
                     </div>
-                    <div class="col-12 col-md-6 col-lg-3 service-col">
+                    <div class="col-12 col-md-6 col-lg-3 service-card">
                         <img src="images/instant.png" alt="service image">
                         <h3>Instant</h3>
                         <p>Apple pie icing sweet. Brownie jelly-o applicake applicake sweet roll liquorice bear claw.
                             Jujubes carrot cake cotton candy sweet tart brownie. Tiramisu applicake jujubes.</p>
                     </div>
-                    <div class="col-12 col-md-6 col-lg-3 service-col">
+                    <div class="col-12 col-md-6 col-lg-3 service-card">
                         <img src="images/dslr.png" alt="service image">
                         <h3>Serious</h3>
                         <p>Apple pie icing sweet. Brownie jelly-o applicake applicake sweet roll liquorice bear claw.
                             Jujubes carrot cake cotton candy sweet tart brownie. Tiramisu applicake jujubes.</p>
                     </div>
-                    <div class="col-12 col-md-6 col-lg-3 service-col">
+                    <div class="col-12 col-md-6 col-lg-3 service-card">
                         <img src="images/frame.png" alt="service image">
                         <h3>frame</h3>
                         <p>Apple pie icing sweet. Brownie jelly-o applicake applicake sweet roll liquorice bear claw.
@@ -76,7 +76,6 @@
         </section>
 
         <section class="section section-portfolio">
-<!--            Вынести цвета заголовков в отдельный класс -->
             <div class="portfolio-wrapper">
                 <div class="container">
                     <div class="section-header">
@@ -156,11 +155,9 @@
                         <a href="#" class="btn btn-outline-primary">visit me</a>
                     </div>
                     <div class="video-col col-12 col-md-6 col-lg-6">
-                        <iframe class="video"
-                                src="https://www.youtube.com/embed/yF8tNK-7qm8?si=X3x3wH_HwrKvdHKl"
-                                title="YouTube video player" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <div class="responsive-embed">
+                            <iframe class="embed-item" src="https://www.youtube.com/embed/l5x1RdjWmGc?si=zxw6rQExKsjuK6pR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -245,7 +242,8 @@
                             <div class="col-12 col-md-12 col-lg-12 contact-item-message">
                                 <div class="form-item">
                                     <label for="message">Message</label>
-                                    <textarea name="message" id="message" cols="30" rows="10" placeholder="Your massage..."
+                                    <textarea name="message" id="message" cols="30" rows="10"
+                                              placeholder="Your massage..."
                                               required></textarea>
                                 </div>
                                 <button class="btn btn-primary" type="submit">MASSAGE</button>
