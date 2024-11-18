@@ -3,9 +3,7 @@
 	color: $gray;
 
 	.footer-box {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
+		@extend %flexrow;
 		padding: 40px 0;
 		font-size: 12px;
 		@include media('>=tablet') {
@@ -17,10 +15,11 @@
 
 		.footer-menu {
 			@extend %listreset;
+			display: -webkit-box;
+			display: -ms-flexbox;
 			display: flex;
 
 			a {
-
 				color: $gray;
 				text-transform: uppercase;
 			}

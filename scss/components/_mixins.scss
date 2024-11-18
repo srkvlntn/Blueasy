@@ -25,6 +25,22 @@
 	width: 100%;
 }
 
+// flexrow
+/// @extend %flexrow;
+%flexrow {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+// flexcenter
+/// @extend %flexcenter;
+%flexcenter {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 /// Creates a visual triangle.
 /// Mixin takes ($size, $color, $direction)
 /// The $size argument can take one or two values—width height.
@@ -72,7 +88,7 @@
 		border-top: $height solid $foreground-color;
 
 		@if $direction == up-right {
-			border-left:  $width solid $background-color;
+			border-left: $width solid $background-color;
 		} @else if $direction == up-left {
 			border-right: $width solid $background-color;
 		}
@@ -80,7 +96,7 @@
 		border-bottom: $height solid $foreground-color;
 
 		@if $direction == down-right {
-			border-left:  $width solid $background-color;
+			border-left: $width solid $background-color;
 		} @else if $direction == down-left {
 			border-right: $width solid $background-color;
 		}
@@ -145,9 +161,20 @@
 ///   }
 
 @mixin placeholder {
-	&::-webkit-input-placeholder {@content}
-	&::-moz-placeholder {opacity: 1; @content}
-	&:-moz-placeholder {@content}
-	&:-ms-input-placeholder {@content}
-	&.placeholder {@content}
+	&::-webkit-input-placeholder {
+		@content
+	}
+	&::-moz-placeholder {
+		opacity: 1;
+		@content
+	}
+	&:-moz-placeholder {
+		@content
+	}
+	&:-ms-input-placeholder {
+		@content
+	}
+	&.placeholder {
+		@content
+	}
 }
