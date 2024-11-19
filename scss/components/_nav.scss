@@ -24,37 +24,39 @@
 		background-color: transparent;
 	}
 
-	li {
-		a {
-			color: $white;
-			font-weight: bold;
-			text-decoration: none;
-			display: block;
-			padding: 10px;
-			background-color: $gray;
-			margin-bottom: 1px;
-			text-transform: uppercase;
-			-webkit-transition: color .3s linear, border-color .35s linear, background-color .3s ease-in-out;
-			-o-transition: color .3s linear, border-color .35s linear, background-color .3s ease-in-out;
-			transition: color .3s linear, border-color .35s linear, background-color .3s ease-in-out;
-			@include media('>=tablet') {
-				padding: 5px 20px;
-				border: 2px solid transparent;
-				background-color: transparent;
-			}
+	.active {
+		color: $white;
+		background-color: $blue;
+		@include media('>=tablet') {
+			background-color: transparent;
+			border: 2px solid $blue;
+			color: $blue;
+		}
+	}
 
-			&:hover {
-				background-color: $blue;
-				@include media('>=tablet') {
-					background-color: transparent;
-					//border: 2px solid $blue;
-					color: $blue;
-				}
-			}
+	a {
+		color: $white;
+		font-weight: bold;
+		text-decoration: none;
+		display: block;
+		padding: 10px;
+		background-color: $gray;
+		margin-bottom: 1px;
+		text-transform: uppercase;
+		-webkit-transition: color .3s linear, border-color .35s linear, background-color .3s ease-in-out;
+		-o-transition: color .3s linear, border-color .35s linear, background-color .3s ease-in-out;
+		transition: color .3s linear, border-color .35s linear, background-color .3s ease-in-out;
+		@include media('>=tablet') {
+			padding: 8px 20px;
+			margin: 0 5px;
+			border: 2px solid transparent;
+			background-color: transparent;
+		}
+		@include media('>=desktop') {
+			margin: 0 10px;
 		}
 
-		.active {
-			color: $white;
+		&:hover {
 			background-color: $blue;
 			@include media('>=tablet') {
 				background-color: transparent;

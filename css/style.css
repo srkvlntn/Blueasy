@@ -682,7 +682,18 @@ a:hover {
     background-color: transparent;
   }
 }
-.menu li a {
+.menu .active {
+  color: #fff;
+  background-color: #4bcaff;
+}
+@media (min-width: 768px) {
+  .menu .active {
+    background-color: transparent;
+    border: 2px solid #4bcaff;
+    color: #4bcaff;
+  }
+}
+.menu a {
   color: #fff;
   font-weight: bold;
   text-decoration: none;
@@ -696,27 +707,23 @@ a:hover {
   transition: color 0.3s linear, border-color 0.35s linear, background-color 0.3s ease-in-out;
 }
 @media (min-width: 768px) {
-  .menu li a {
-    padding: 5px 20px;
+  .menu a {
+    padding: 8px 20px;
+    margin: 0 5px;
     border: 2px solid transparent;
     background-color: transparent;
   }
 }
-.menu li a:hover {
-  background-color: #4bcaff;
-}
-@media (min-width: 768px) {
-  .menu li a:hover {
-    background-color: transparent;
-    color: #4bcaff;
+@media (min-width: 1024px) {
+  .menu a {
+    margin: 0 10px;
   }
 }
-.menu li .active {
-  color: #fff;
+.menu a:hover {
   background-color: #4bcaff;
 }
 @media (min-width: 768px) {
-  .menu li .active {
+  .menu a:hover {
     background-color: transparent;
     border: 2px solid #4bcaff;
     color: #4bcaff;
@@ -1028,7 +1035,7 @@ a:hover {
     background-color: transparent;
   }
 }
-.menu-section li a {
+.menu-section a {
   color: #fff;
   font-weight: bold;
   text-decoration: none;
@@ -1037,33 +1044,40 @@ a:hover {
   background-color: #515f67;
   margin-bottom: 1px;
   text-transform: uppercase;
-  -webkit-transition: color 0.3s linear, border-color 0.35s linear, background-color 0.3s ease-in-out;
-  -o-transition: color 0.3s linear, border-color 0.35s linear, background-color 0.3s ease-in-out;
-  transition: color 0.3s linear, border-color 0.35s linear, background-color 0.3s ease-in-out;
+  -webkit-transition: color 0.29s ease, border-color 0.3s ease, background-color 0.3s ease-in-out;
+  -o-transition: color 0.29s ease, border-color 0.3s ease, background-color 0.3s ease-in-out;
+  transition: color 0.29s ease, border-color 0.3s ease, background-color 0.3s ease-in-out;
 }
 @media (min-width: 768px) {
-  .menu-section li a {
-    padding: 5px 20px;
+  .menu-section a {
+    padding: 8px 20px;
+    margin: 0 5px;
     border: 2px solid transparent;
     background-color: transparent;
     color: #515f67;
   }
 }
-.menu-section li a:hover {
+@media (min-width: 1024px) {
+  .menu-section a {
+    margin: 0 10px;
+  }
+}
+.menu-section a:hover {
   background-color: #4bcaff;
 }
 @media (min-width: 768px) {
-  .menu-section li a:hover {
+  .menu-section a:hover {
     background-color: transparent;
+    border: 2px solid #4bcaff;
     color: #4bcaff;
   }
 }
-.menu-section li .active {
+.menu-section .active {
   color: #fff;
   background-color: #4bcaff;
 }
 @media (min-width: 768px) {
-  .menu-section li .active {
+  .menu-section .active {
     background-color: transparent;
     border: 2px solid #4bcaff;
     color: #4bcaff;
@@ -1131,13 +1145,13 @@ a:hover {
   }
 }
 @media (min-width: 768px) {
-  .section-video .grid .video-col {
+  .section-video .video-col {
     padding: 0 30px;
     margin-bottom: 0;
   }
 }
 @media (min-width: 1024px) {
-  .section-video .grid .video-col {
+  .section-video .video-col {
     padding: 0 70px;
   }
 }
@@ -1197,17 +1211,17 @@ a:hover {
   border-color: #fff;
 }
 
-.section-twitter .twitter-box p {
+.section-twitter p {
   font-weight: lighter;
   font-size: 24px;
   line-height: 1.8;
 }
 @media (min-width: 768px) {
-  .section-twitter .twitter-box p {
+  .section-twitter p {
     font-size: 28px;
   }
 }
-.section-twitter .twitter-box p a {
+.section-twitter p a {
   color: #fff;
   font-weight: bold;
 }
@@ -1300,53 +1314,54 @@ a:hover {
   -ms-flex-direction: column;
   flex-direction: column;
 }
-.section-contact .form-item input, .section-contact .form-item textarea {
+.section-contact input, .section-contact textarea {
   padding: 15px;
   background-color: transparent;
   border: 2px solid #fff;
   color: #fff;
 }
-.section-contact .form-item input:focus, .section-contact .form-item textarea:focus {
+.section-contact input:focus, .section-contact textarea:focus {
   outline: none;
-  -webkit-box-shadow: 0 0 0 1px #fff;
-  box-shadow: 0 0 0 1px #fff;
+  -webkit-box-shadow: 0 0 0 1px #4bcaff;
+  box-shadow: 0 0 0 1px #4bcaff;
+  border: 2px solid #4bcaff;
 }
-.section-contact .form-item input,
-.section-contact .form-item textarea,
-.section-contact .form-item p {
+.section-contact input,
+.section-contact textarea,
+.section-contact p {
   margin-bottom: 20px;
 }
 @media (min-width: 768px) {
-  .section-contact .form-item input,
-  .section-contact .form-item textarea,
-  .section-contact .form-item p {
+  .section-contact input,
+  .section-contact textarea,
+  .section-contact p {
     margin-bottom: 25px;
   }
 }
 @media (min-width: 1024px) {
-  .section-contact .form-item input,
-  .section-contact .form-item textarea,
-  .section-contact .form-item p {
+  .section-contact input,
+  .section-contact textarea,
+  .section-contact p {
     margin-bottom: 30px;
   }
 }
-.section-contact .form-item address p {
+.section-contact address p {
   font-style: normal;
   margin-bottom: 0;
 }
-.section-contact .form-item p,
-.section-contact .form-item address {
+.section-contact p,
+.section-contact address {
   font-weight: 600;
 }
-.section-contact .form-item textarea {
+.section-contact textarea {
   resize: none;
 }
-.section-contact .form-item label {
+.section-contact label {
   margin-bottom: 5px;
   font-weight: bold;
 }
 @media (min-width: 768px) {
-  .section-contact .form-item label {
+  .section-contact label {
     margin-bottom: 10px;
   }
 }
@@ -1355,30 +1370,30 @@ a:hover {
   -ms-flex-align: center;
   align-items: center;
 }
-.section-contact .form-row .contact-item-name {
+.section-contact .contact-item-name {
   -webkit-box-ordinal-group: 2;
   -ms-flex-order: 1;
   order: 1;
 }
-.section-contact .form-row .contact-item-message {
+.section-contact .contact-item-message {
   -webkit-box-ordinal-group: 3;
   -ms-flex-order: 2;
   order: 2;
 }
 @media (min-width: 768px) {
-  .section-contact .form-row .contact-item-message {
+  .section-contact .contact-item-message {
     -webkit-box-ordinal-group: 4;
     -ms-flex-order: 3;
     order: 3;
   }
 }
-.section-contact .form-row .contact-item-address {
+.section-contact .contact-item-address {
   -webkit-box-ordinal-group: 4;
   -ms-flex-order: 3;
   order: 3;
 }
 @media (min-width: 768px) {
-  .section-contact .form-row .contact-item-address {
+  .section-contact .contact-item-address {
     -webkit-box-ordinal-group: 3;
     -ms-flex-order: 2;
     order: 2;
